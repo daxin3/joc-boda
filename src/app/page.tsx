@@ -3,7 +3,10 @@
 import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Suspense } from 'react'
+import { Suspense, useState  } from 'react'
+
+
+
 
 /*const styleScript = Style_Script({
   weight: '400',
@@ -390,6 +393,91 @@ function TitolInfoClauEs() {
 export default function Home() {
 
   const totalImages = 17;
+
+  const preguntes = [
+    {
+      id: 1,
+      text: 'Quin és el resultat de 2 + 2?',
+      respostaCorrecta: '4',
+    },
+    {
+      id: 2,
+      text: 'Capital de França?',
+      respostaCorrecta: 'París',
+    },
+    {
+      id: 3,
+      text: 'Color del cel en un dia clar?',
+      respostaCorrecta: 'blau',
+    },
+  ];
+
+  const [pasActual, setPasActual] = useState(0);
+  const [respostaUsuari, setRespostaUsuari] = useState('');
+  const [acabat, setAcabat] = useState(false);
+  const [error, setError] = useState('');
+
+  const comprovarResposta = () => {
+    const respostaCorrecta = preguntes[pasActual].respostaCorrecta.toLowerCase().trim();
+    if (respostaUsuari.toLowerCase().trim() === respostaCorrecta) {
+      setError('');
+      if (pasActual < preguntes.length - 1) {
+        setPasActual(pasActual + 1);
+        setRespostaUsuari('');
+      } else {
+        setAcabat(true);
+      }
+    } else {
+      setError('Resposta incorrecta. Torna-ho a provar.');
+    }
+  };
+
+  if (acabat) {
+    return (
+      <div className="p-6 text-center text-green-600 font-bold text-xl">
+        🎉 Felicitats! Has respost totes les preguntes correctament!
+      </div>
+    );
+  }
+
+  return (
+    <div >
+      <div className={styles.header_background}>
+        <picture>
+          <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile.png" />
+          <img
+            className='center-fit'
+            src="/joc-boda/capcelera_desktop_ics.png"
+            alt="Wellcome"
+            width={1280}
+            height={600}
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </picture>
+      </div>
+
+      <div className={styles.page}>
+      <br />
+
+      <h2 className="text-xl font-semibold mb-4">Pregunta {pasActual + 1}</h2>
+      <p className="mb-4">{preguntes[pasActual].text}</p>
+      <input
+        type="text"
+        value={respostaUsuari}
+        onChange={(e) => setRespostaUsuari(e.target.value)}
+        className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+      />
+      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+      <br />
+      <button
+        onClick={comprovarResposta}
+        className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+      >
+        Comprovar
+      </button>
+      </div>
+    </div>
+  );
 
 
   return (
