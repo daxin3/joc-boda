@@ -2,6 +2,22 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Did you just downloaded the project?
+
+First step is to remember we are using...
+
+- Node 22.12.0
+- Next.js 15.1.3
+- over React ^19.0.0
+
+Ensure you switched to Node 22 with the "nvm" command function,
+
+After that, run 
+
+```bash
+npm install
+```
+
 ## Getting Started
 
 First, run the development server:
