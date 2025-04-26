@@ -3,8 +3,8 @@
 import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Suspense, useState,  } from 'react';
-import { ConfettiReal } from './ConfettiReal'; 
+import { Suspense, useState, } from 'react';
+import { ConfettiReal } from './ConfettiReal';
 
 
 
@@ -391,6 +391,46 @@ function TitolInfoClauEs() {
   )
 }
 
+function FooterPersonalitzat() {
+  return (
+    <footer>
+      <div className={styles.footer_container_relative}>
+        <Image
+          className='center-fit'
+          src="/joc-boda/footer_edit_d.png"
+          alt="Wellcome"
+          width={0}
+          height={0}
+          style={{ width: '100%', height: 'auto' }}
+        />
+        <h4 className={styles.footer_container_text}>
+          Passeu-vos-ho molt bé!
+        </h4>
+      </div>
+      <div style={{ textAlign: "center", fontSize: "small", padding: "10px" }}> · Dissenyada per nosaltres amb molt  &#129505; · </div>
+      <br />
+    </footer>
+  )
+}
+
+function LaCapcelera() {
+  return (
+    <div className={styles.header_background}>
+      <picture>
+        <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
+        <img
+          className='center-fit'
+          src="/joc-boda/capcelera_mobile_challenge.png"
+          alt="Wellcome"
+          width={1280}
+          height={600}
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </picture>
+    </div>
+  )
+}
+
 export default function Home() {
 
   const totalImages = 17;
@@ -401,9 +441,9 @@ export default function Home() {
     {
       id: 1,
       calRespondre: true,
-      text: 'Quin és l\'element decoratiu més repetit a casa nostra?',
+      text: 'Quin és l\'element decoratiu més repetit a casa dels nuvis?',
       respostesCorrectes: ['Lluna', 'gossa', 'teckel', 'perra', 'luna'],
-    },
+    }, /*
     {
       id: 2,
       calRespondre: true,
@@ -433,11 +473,11 @@ export default function Home() {
       calRespondre: true,
       text: 'On volem anar de viatge de noces?',
       respostesCorrectes: ['Orlando', 'parcs', 'florida'],
-    }, 
+    }, */
     {
       id: 7,
       calRespondre: false,
-      text: 'Enhorabona! Heu superat la primera part. Ara busqueu el bahúl i obriu-lo ¿amb el codi?',
+      text: 'Enhorabona! Heu superat la primera part. Ara heu de localitzar el bahúl i obriu-lo ¿amb el codi?',
       respostesCorrectes: ['']
     },
     {
@@ -491,43 +531,30 @@ export default function Home() {
     }
   };
 
-  
+
 
   if (wellcome) {
     return (
       <div>
-        
-        <div >
-          <div className={styles.header_background}>
-            <picture>
-              <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
-              <img
-                className='center-fit'
-                src="/joc-boda/capcelera_mobile_challenge.png"
-                alt="Wellcome"
-                width={1280}
-                height={600}
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </picture>
-          </div>
+
+        <div className='contenidor-principal' >
+          <LaCapcelera />
 
           <div className={styles.page}>
             <br />
-            <h3>Hem preparat un joc per identificar si la vostra colla es la millor!</h3>
+            <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
+            <br />
             <h4>Instruccions:</h4>
 
             <ul>
-              <li><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
-              <li>Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
-              <li>Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
-              <li>Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda (guiño).</li>
+              <li className="mx-1" ><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
+              <li className="mx-1" >Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
+              <li className="mx-1" >Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
+              <li className="mx-1" >Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda (guiño).</li>
             </ul>
 
+            <h2 className="mx-3">Poseu-vos un nom d&apos;equip:</h2>
 
-            <p><b>Si us plau, escolliu un nom pel vostre grup:</b></p>
-
-            <br />
             <input
               type="text"
               value={valorNomGrup}
@@ -536,14 +563,19 @@ export default function Home() {
             />
 
             <br />
+            <div></div>
             <button
               onClick={guardarNomGrup}
               className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
             >
               Començar
             </button>
+            <br /><br />
+
           </div>
         </div>
+
+        <FooterPersonalitzat />
       </div>
     );
   }
@@ -551,88 +583,74 @@ export default function Home() {
   if (acabat) {
     return (
       <div >
-        <ConfettiReal />
-        <div className={styles.header_background}>
-          <picture>
-            <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
-            <img
-              className='center-fit'
-              src="/joc-boda/capcelera_mobile_challenge.png"
-              alt="Wellcome"
-              width={1280}
-              height={600}
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </picture>
-        </div>
+        <main className='contenidor-principal'>
+          <LaCapcelera />
+          <ConfettiReal />
 
-        <div className={styles.page}>
-          <br />
-          <div className="p-6 text-center text-green-600 font-bold text-xl">
-             
+          <div className={styles.page}>
+            <br />
+            <div className="p-6 text-center text-green-600 font-bold text-xl">
+
+            </div>
+            <h1>🎉 Felicitats! 🎉</h1>
+            <h3>Heu completat el repte!</h3>
           </div>
-          <h1>🎉 Felicitats! 🎉</h1>
-          <h3>Heu completat el repte!</h3>
-        </div>
+          <FooterPersonalitzat />
+        </main>
+
       </div>
     );
   }
 
   return (
     <div >
-      <div className={styles.header_background}>
-        <picture>
-          <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
-          <img
-            className='center-fit'
-            src="/joc-boda/capcelera_mobile_challenge.png"
-            alt="Wellcome"
-            width={1280}
-            height={600}
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </picture>
-      </div>
+      <LaCapcelera />
 
       <div className={styles.page}>
         <div className="text-start" ></div>
         <br />
-        <h1 className="mx-3">Endavant <b>{valorNomGrup}!</b></h1><br/>
+        <h1 className="mx-3">Endavant <b>{valorNomGrup}!</b></h1><br />
 
         {preguntes[pasActual].calRespondre ? (
           <>
-          <h3 className="text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
-        <p className="mb-4 mx-3">{preguntes[pasActual].text}</p>
-        <input
-          type="text"
-          value={respostaUsuari}
-          onChange={(e) => setRespostaUsuari(e.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
-        />
-        {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-        <br />
-        <div></div>
-        <button
-          onClick={comprovarResposta}
-          className="mx-auto bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-        >
-          Comprovar
-        </button>
-        </>
+            <h3 className="mx-3 text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
+            <p className="mb-4 mx-3">{preguntes[pasActual].text}</p>
+            <input
+              type="text"
+              value={respostaUsuari}
+              onChange={(e) => setRespostaUsuari(e.target.value)}
+              className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+            />
+            {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+            <br />
+            <div></div>
+            <button
+              onClick={comprovarResposta}
+              className="mx-auto bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+            >
+              Comprovar
+            </button>
+          </>
         ) : (
           <>
-          <br />
-        <button
-          onClick={seguentPas}
-          className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-        >
-          Següent
-        </button>
+            <h5 className="mx-3 text-xl font-semibold mb-4 text-center">{preguntes[pasActual].text}</h5>
+            <br />
+            <button
+              onClick={seguentPas}
+              className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+            >
+              Següent
+            </button>
+
           </>
 
         )}
-        
+        <br /><br />
+
+
+
       </div>
+      <FooterPersonalitzat />
     </div>
   );
 

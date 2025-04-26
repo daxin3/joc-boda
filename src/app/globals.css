@@ -13,11 +13,13 @@
 
 html,
 body {
+  --bs-body-bg: #ffe8d5;
   margin:    0 auto;
   max-width: 1100px;
   overflow-x: hidden;
   min-height: 100svh;
   background-color: #ffe8d5;
+  
   
 }
 
@@ -29,6 +31,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-shadow: 0px 0px 8px #dbdbdb;
   overflow: hidden;
+}
+
+.contenidor-principal {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 footer {
