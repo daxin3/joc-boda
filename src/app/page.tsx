@@ -3,7 +3,8 @@
 import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Suspense, useState  } from 'react'
+import { Suspense, useState,  } from 'react';
+import { ConfettiReal } from './ConfettiReal'; 
 
 
 
@@ -85,7 +86,7 @@ function BlocHotelEs() {
         <h5>Alojamiento / Taxi</h5>
         <p style={{ padding: "10px 25px 10px 25px" }} >
           Si necesitáis alojamiento o taxi, nos podéis contactar para ofreceros referencias y contactos.
-          </p>
+        </p>
       </div>
     </div>
   )
@@ -146,32 +147,32 @@ function SectionCarta() {
 
 function SectionCartaEs() {
   return (
-<section>
-        <h1>¡Que sí! ¡¡Nos casamos!!</h1><br />
+    <section>
+      <h1>¡Que sí! ¡¡Nos casamos!!</h1><br />
 
-        <Suspense>
-          <h3>Hola <RenderQueryName />,</h3>
-        </Suspense><br />
-        <p>¡Estamos superfelices! <b>Resérvate la fecha</b> y prepárate para reír, comer, beber, bailar 
+      <Suspense>
+        <h3>Hola <RenderQueryName />,</h3>
+      </Suspense><br />
+      <p>¡Estamos superfelices! <b>Resérvate la fecha</b> y prepárate para reír, comer, beber, bailar
         y pasarlo bien con nosotros.</p>
-        <p>Hace casi 10 años nos conocimos en la universidad, seguramente en una de las etapas más duras 
-          que hemos vivido por el momento, aunque ahora mismo dudamos si no es más dura la organización 
-          de una boda. &#128521;
-        </p>
-        <p>Tres años más tarde nos aventuramos a vivir juntos sin saber que unos meses más tarde vendría una pandemia que nos obligaría a pasar el 200% del tiempo juntos. Y por si fuera poco, encima, trabajando en la misma empresa.</p>
-        <p>Superada esa prueba, nos enamoramos ciegamente del amor más fiel y real que existe, nuestra querida Luna, que nos convirtió en mamá y papá, y que nos prepara para lo que vendrá más adelante.
-        </p>
-        <p>Hace ya más de un año nos decidimos a dar el paso con algo mucho más comprometedor que una boda, ¡¡UNA HIPOTECA!!, así que... ¿Una boda? Pan comido.</p>
-        <p>Ahora vivimos deambulando entre provincias. Barcelona, Lleida y Segovia es donde tenemos trocitos de nuestro corazón, en cada una de las personas que las habitan y que hoy estáis leyendo estos párrafos.</p>
-        <p>¡¡¡Esperamos que disfrutéis tanto como nosotros de nuestro día, un abrazo muuuy grande!!!</p>
-        <br />
-        <p>En el <b>formulario de asistencia </b> (más abajo) debes confirmar si vas a asistir a la boda y un cuestionario sobre alérgenos. Confírmanos tu asistencia lo antes posible, por favor. Así organizarlo todo nos será mucho más fácil.
-        </p>
-        <p><b>Recuerda, “Tu presencia es nuestro regalo más preciado, por eso esta invitación es personal e intransferible”</b>
-        </p>
-        <p>Esperamos verte muy pronto. ¡Mil besos! &#129505;</p>
-        <p>Dani y Clàudia</p>
-      </section>
+      <p>Hace casi 10 años nos conocimos en la universidad, seguramente en una de las etapas más duras
+        que hemos vivido por el momento, aunque ahora mismo dudamos si no es más dura la organización
+        de una boda. &#128521;
+      </p>
+      <p>Tres años más tarde nos aventuramos a vivir juntos sin saber que unos meses más tarde vendría una pandemia que nos obligaría a pasar el 200% del tiempo juntos. Y por si fuera poco, encima, trabajando en la misma empresa.</p>
+      <p>Superada esa prueba, nos enamoramos ciegamente del amor más fiel y real que existe, nuestra querida Luna, que nos convirtió en mamá y papá, y que nos prepara para lo que vendrá más adelante.
+      </p>
+      <p>Hace ya más de un año nos decidimos a dar el paso con algo mucho más comprometedor que una boda, ¡¡UNA HIPOTECA!!, así que... ¿Una boda? Pan comido.</p>
+      <p>Ahora vivimos deambulando entre provincias. Barcelona, Lleida y Segovia es donde tenemos trocitos de nuestro corazón, en cada una de las personas que las habitan y que hoy estáis leyendo estos párrafos.</p>
+      <p>¡¡¡Esperamos que disfrutéis tanto como nosotros de nuestro día, un abrazo muuuy grande!!!</p>
+      <br />
+      <p>En el <b>formulario de asistencia </b> (más abajo) debes confirmar si vas a asistir a la boda y un cuestionario sobre alérgenos. Confírmanos tu asistencia lo antes posible, por favor. Así organizarlo todo nos será mucho más fácil.
+      </p>
+      <p><b>Recuerda, “Tu presencia es nuestro regalo más preciado, por eso esta invitación es personal e intransferible”</b>
+      </p>
+      <p>Esperamos verte muy pronto. ¡Mil besos! &#129505;</p>
+      <p>Dani y Clàudia</p>
+    </section>
   )
 }
 
@@ -374,15 +375,15 @@ function SectionFormulari() {
 
 function TitolInfoClau() {
   if (IsCat()) {
-    return(
+    return (
       <h1>Informació clau</h1>
     )
   } else {
-    return(
-      <TitolInfoClauEs/>
+    return (
+      <TitolInfoClauEs />
     )
   }
-} 
+}
 
 function TitolInfoClauEs() {
   return (
@@ -394,32 +395,81 @@ export default function Home() {
 
   const totalImages = 17;
 
+
+
   const preguntes = [
     {
       id: 1,
-      text: 'Quin és el resultat de 2 + 2?',
-      respostaCorrecta: '4',
-    },
+      calRespondre: true,
+      text: 'Quin és l\'element decoratiu més repetit a casa nostra?',
+      respostesCorrectes: ['Lluna', 'gossa', 'teckel', 'perra', 'luna'],
+    },/*
     {
       id: 2,
-      text: 'Capital de França?',
-      respostaCorrecta: 'París',
+      calRespondre: true,
+      text: 'Quina es la marca de txocolata desfeta preferida dels nuvis? (Pista: És una marca lleidatana)',
+      respostesCorrectes: ['jolonch'],
     },
     {
       id: 3,
-      text: 'Color del cel en un dia clar?',
-      respostaCorrecta: 'blau',
+      calRespondre: true,
+      text: 'Nom complert del poble del Dani? (Ningú ha dit que sería un camí de roses...)',
+      respostesCorrectes: ['Bellcaire d\'Urgell', 'bellcaire urgell', 'belcaire de urgel', 'belcaire urgel'],
+    },
+    {
+      id: 4,
+      calRespondre: true,
+      text: 'Nom complert del poble de la Clàudia? (Double challenge! Ànims! Aquell on hi ha la piscina... Saps?)',
+      respostesCorrectes: ['aldehuela del codonal', 'aldehuela codonal'],
+    },
+    {
+      id: 5,
+      calRespondre: true,
+      text: 'Quina és la marca de bombons preferits del Dani?',
+      respostesCorrectes: ['Lindt'],
+    },
+    {
+      id: 6,
+      calRespondre: true,
+      text: 'On volem anar de viatge de noces?',
+      respostesCorrectes: ['Orlando', 'parcs', 'florida'],
+    }, */
+    {
+      id: 7,
+      calRespondre: false,
+      text: 'Enhorabona! Heu superat la primera part. Ara busqueu el bahúl i obriu-lo ¿amb el codi?',
+      respostesCorrectes: ['']
+    },
+    {
+      id: 8,
+      calRespondre: true,
+      text: 'Escriu el missatge, text o paraula secreta que has trobat:',
+      respostesCorrectes: ['Dani'],
     },
   ];
+
+
+  const [wellcome, setWellcome] = useState(true);
+  const [valorNomGrup, setNomGrup] = useState('');
+
 
   const [pasActual, setPasActual] = useState(0);
   const [respostaUsuari, setRespostaUsuari] = useState('');
   const [acabat, setAcabat] = useState(false);
   const [error, setError] = useState('');
 
+  const guardarNomGrup = () => {
+    if (valorNomGrup.length > 0) {
+
+      setWellcome(false);
+    }
+  }
+
   const comprovarResposta = () => {
-    const respostaCorrecta = preguntes[pasActual].respostaCorrecta.toLowerCase().trim();
-    if (respostaUsuari.toLowerCase().trim() === respostaCorrecta) {
+    const respostesCorrectes = preguntes[pasActual].respostesCorrectes.map((r) => r.toLowerCase().trim());
+    const respostaUsuariNormalitzada = respostaUsuari.toLowerCase().trim();
+
+    if (respostesCorrectes.includes(respostaUsuariNormalitzada)) {
       setError('');
       if (pasActual < preguntes.length - 1) {
         setPasActual(pasActual + 1);
@@ -432,10 +482,98 @@ export default function Home() {
     }
   };
 
+  const seguentPas = () => {
+    if (pasActual < preguntes.length - 1) {
+      setPasActual(pasActual + 1);
+      setRespostaUsuari('');
+    } else {
+      setAcabat(true);
+    }
+  };
+
+  
+
+  if (wellcome) {
+    return (
+      <div>
+        
+        <div >
+          <div className={styles.header_background}>
+            <picture>
+              <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
+              <img
+                className='center-fit'
+                src="/joc-boda/capcelera_mobile_challenge.png"
+                alt="Wellcome"
+                width={1280}
+                height={600}
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </picture>
+          </div>
+
+          <div className={styles.page}>
+            <br />
+            <h3>Hem preparat un joc per identificar si la vostra colla es la millor!</h3>
+            <h4>Instruccions:</h4>
+
+            <ul>
+              <li><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
+              <li>Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
+              <li>Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
+              <li>Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda (guiño).</li>
+            </ul>
+
+
+            <p><b>Si us plau, escolliu un nom pel vostre grup:</b></p>
+
+            <br />
+            <input
+              type="text"
+              value={valorNomGrup}
+              onChange={(e) => setNomGrup(e.target.value)}
+              className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+            />
+
+            <br />
+            <button
+              onClick={guardarNomGrup}
+              className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+            >
+              Començar
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (acabat) {
     return (
-      <div className="p-6 text-center text-green-600 font-bold text-xl">
-        🎉 Felicitats! Has respost totes les preguntes correctament!
+      <div >
+        <ConfettiReal />
+        <div className={styles.header_background}>
+          <picture>
+            <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
+            <img
+              className='center-fit'
+              src="/joc-boda/capcelera_mobile_challenge.png"
+              alt="Wellcome"
+              width={1280}
+              height={600}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </picture>
+        </div>
+
+        <div className={styles.page}>
+          <br />
+          <div className="p-6 text-center text-green-600 font-bold text-xl">
+             
+          </div>
+          <h1>🎉 Felicitats! 🎉</h1>
+          <h3>Heu completat el repte!</h3>
+        </div>
       </div>
     );
   }
@@ -444,10 +582,10 @@ export default function Home() {
     <div >
       <div className={styles.header_background}>
         <picture>
-          <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile.png" />
+          <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile_challenge.png" />
           <img
             className='center-fit'
-            src="/joc-boda/capcelera_desktop_ics.png"
+            src="/joc-boda/capcelera_mobile_challenge.png"
             alt="Wellcome"
             width={1280}
             height={600}
@@ -457,24 +595,43 @@ export default function Home() {
       </div>
 
       <div className={styles.page}>
-      <br />
+        <div className="text-start" ></div>
+        <br />
+        <h1 className="mx-3">Endavant <b>{valorNomGrup}!</b></h1><br/>
 
-      <h2 className="text-xl font-semibold mb-4">Pregunta {pasActual + 1}</h2>
-      <p className="mb-4">{preguntes[pasActual].text}</p>
-      <input
-        type="text"
-        value={respostaUsuari}
-        onChange={(e) => setRespostaUsuari(e.target.value)}
-        className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
-      />
-      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-      <br />
-      <button
-        onClick={comprovarResposta}
-        className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-      >
-        Comprovar
-      </button>
+        {preguntes[pasActual].calRespondre ? (
+          <>
+          <h3 className="text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
+        <p className="mb-4 mx-3">{preguntes[pasActual].text}</p>
+        <input
+          type="text"
+          value={respostaUsuari}
+          onChange={(e) => setRespostaUsuari(e.target.value)}
+          className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+        />
+        {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+        <br />
+        <div></div>
+        <button
+          onClick={comprovarResposta}
+          className="mx-auto bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+        >
+          Comprovar
+        </button>
+        </>
+        ) : (
+          <>
+          <br />
+        <button
+          onClick={seguentPas}
+          className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+        >
+          Següent
+        </button>
+          </>
+
+        )}
+        
       </div>
     </div>
   );
@@ -731,3 +888,5 @@ export default function Home() {
     </div>
   );
 }
+
+

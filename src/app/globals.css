@@ -1,13 +1,13 @@
 
 :root {
-  --background: #fffdfb;
+  --background: #ffe8d5;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #fffdfb;
+    --foreground: #ffe8d5;
   }
 }
 
@@ -16,12 +16,14 @@ body {
   margin:    0 auto;
   max-width: 1100px;
   overflow-x: hidden;
+  min-height: 100svh;
+  background-color: #ffe8d5;
   
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
