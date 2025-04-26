@@ -531,127 +531,166 @@ export default function Home() {
     }
   };
 
+  /*
+  return (
+    <>
+      <main>
+        <div style={{ flex: '1' }}>
+          <LaCapcelera />
+
+        </div>
+
+        <div style={{ height: 'auto' }}>
+          <FooterPersonalitzat />
+        </div>
+      </main>
+    </>
+  ); */
 
 
   if (wellcome) {
     return (
-      <div>
+      <>
 
-        <div className='contenidor-principal' >
-          <LaCapcelera />
+        <main>
+          <div style={{ flex: '1' }}>
+            <LaCapcelera />
 
-          <div className={styles.page}>
-            <br />
-            <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
-            <br />
-            <h4>Instruccions:</h4>
+            <div className={styles.page}>
+              <br />
+              <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
+              <br />
+              <h4>Instruccions:</h4>
 
-            <ul>
-              <li className="mx-1" ><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
-              <li className="mx-1" >Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
-              <li className="mx-1" >Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
-              <li className="mx-1" >Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda (guiño).</li>
-            </ul>
+              <ul>
+                <li className="mx-1" ><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
+                <li className="mx-1" >Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
+                <li className="mx-1" >Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
+                <li className="mx-1" >Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda (guiño).</li>
+              </ul>
 
-            <h2 className="mx-3">Poseu-vos un nom d&apos;equip:</h2>
+              <h2 className="mx-3">Poseu-vos un nom d&apos;equip:</h2>
 
-            <input
-              type="text"
-              value={valorNomGrup}
-              onChange={(e) => setNomGrup(e.target.value)}
-              className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
-            />
+              <input
+                type="text"
+                value={valorNomGrup}
+                onChange={(e) => setNomGrup(e.target.value)}
+                className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+              />
 
-            <br />
-            <div></div>
-            <button
-              onClick={guardarNomGrup}
-              className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-            >
-              Començar
-            </button>
-            <br /><br />
+              <br />
+              <div></div>
+              <button
+                onClick={guardarNomGrup}
+                className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+              >
+                Començar
+              </button>
+              <br /><br />
+
+            </div>
+
 
           </div>
-        </div>
 
-        <FooterPersonalitzat />
-      </div>
+          <div style={{ height: 'auto' }}>
+            <FooterPersonalitzat />
+          </div>
+        </main>
+
+      </>
+
     );
   }
 
   if (acabat) {
     return (
-      <div >
-        <main className='contenidor-principal'>
-          <LaCapcelera />
-          <ConfettiReal />
+      <>
 
-          <div className={styles.page}>
-            <br />
-            <div className="p-6 text-center text-green-600 font-bold text-xl">
+        <main>
+          <div style={{ flex: '1' }}>
+            <LaCapcelera />
+            <ConfettiReal />
 
+            <div className={styles.page}>
+              <br />
+              <div className="p-6 text-center text-green-600 font-bold text-xl">
+
+              </div>
+              <h1>🎉 Felicitats! 🎉</h1>
+              <h3>Heu completat el repte!</h3>
             </div>
-            <h1>🎉 Felicitats! 🎉</h1>
-            <h3>Heu completat el repte!</h3>
           </div>
-          <FooterPersonalitzat />
+
+          <div style={{ height: 'auto' }}>
+            <FooterPersonalitzat />
+          </div>
         </main>
 
-      </div>
+      </>
+
     );
   }
 
   return (
-    <div >
-      <LaCapcelera />
+    <>
 
-      <div className={styles.page}>
-        <div className="text-start" ></div>
-        <br />
-        <h1 className="mx-3">Endavant <b>{valorNomGrup}!</b></h1><br />
-
-        {preguntes[pasActual].calRespondre ? (
-          <>
-            <h3 className="mx-3 text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
-            <p className="mb-4 mx-3">{preguntes[pasActual].text}</p>
-            <input
-              type="text"
-              value={respostaUsuari}
-              onChange={(e) => setRespostaUsuari(e.target.value)}
-              className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
-            />
-            {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+      <main>
+        <div style={{ flex: '1' }}>
+          <LaCapcelera />
+          <div className={styles.page}>
+            <div className="text-start" ></div>
             <br />
-            <div></div>
-            <button
-              onClick={comprovarResposta}
-              className="mx-auto bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-            >
-              Comprovar
-            </button>
-          </>
-        ) : (
-          <>
-            <h5 className="mx-3 text-xl font-semibold mb-4 text-center">{preguntes[pasActual].text}</h5>
-            <br />
-            <button
-              onClick={seguentPas}
-              className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-            >
-              Següent
-            </button>
+            <h1 className="mx-3">Endavant <b>{valorNomGrup}!</b></h1><br />
 
-          </>
+            {preguntes[pasActual].calRespondre ? (
+              <>
+                <h3 className="mx-3 text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
+                <p className="mb-4 mx-3">{preguntes[pasActual].text}</p>
+                <input
+                  type="text"
+                  value={respostaUsuari}
+                  onChange={(e) => setRespostaUsuari(e.target.value)}
+                  className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+                />
+                {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+                <br />
+                <div></div>
+                <button
+                  onClick={comprovarResposta}
+                  className="mx-auto bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+                >
+                  Comprovar
+                </button>
+              </>
+            ) : (
+              <>
+                <h5 className="mx-3 text-xl font-semibold mb-4 text-center">{preguntes[pasActual].text}</h5>
+                <br />
+                <button
+                  onClick={seguentPas}
+                  className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+                >
+                  Següent
+                </button>
 
-        )}
-        <br /><br />
+              </>
+
+            )}
+            <br /><br />
 
 
 
-      </div>
-      <FooterPersonalitzat />
-    </div>
+          </div>
+        </div>
+
+        <div style={{ height: 'auto' }}>
+          <FooterPersonalitzat />
+        </div>
+      </main>
+
+    </>
+
   );
 
 

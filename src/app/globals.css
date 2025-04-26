@@ -13,7 +13,7 @@
 
 html,
 body {
-  --bs-body-bg: #ffe8d5;
+  --bs-body-bg: #ffe6c0;
   margin:    0 auto;
   max-width: 1100px;
   overflow-x: hidden;
@@ -39,12 +39,14 @@ body {
 }
 
 main {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh
 }
 
 footer {
   background: #fbe9cd;
-  background: linear-gradient(0deg, #f5cfc8 56%, #fff5ed 90%);
+  background: linear-gradient(0deg, #f5cfc8 56%, #ffe6c0 90%);
 }
 
 * {

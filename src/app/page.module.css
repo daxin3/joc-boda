@@ -16,7 +16,7 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  background-color: #ffe8d5;
+  /*background-color: #ffe8d5;*/
   display: flow;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
@@ -231,7 +231,7 @@ a.secondary {
 
 .header_background {
   background: #fbe9cd;
-    background: linear-gradient(3deg, #ffe1b2 0%, #efa2d4 100%);
+    background: linear-gradient(0deg, #ffe6c0 0%, #efa2d4 100%);
 }
 
 .call_to_action_background {
