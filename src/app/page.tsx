@@ -403,11 +403,11 @@ export default function Home() {
       calRespondre: true,
       text: 'Quin és l\'element decoratiu més repetit a casa nostra?',
       respostesCorrectes: ['Lluna', 'gossa', 'teckel', 'perra', 'luna'],
-    },/*
+    },
     {
       id: 2,
       calRespondre: true,
-      text: 'Quina es la marca de txocolata desfeta preferida dels nuvis? (Pista: És una marca lleidatana)',
+      text: 'Quina es la marca de xocolata desfeta preferida dels nuvis? (Pista: És una marca lleidatana)',
       respostesCorrectes: ['jolonch'],
     },
     {
@@ -433,7 +433,7 @@ export default function Home() {
       calRespondre: true,
       text: 'On volem anar de viatge de noces?',
       respostesCorrectes: ['Orlando', 'parcs', 'florida'],
-    }, */
+    }, 
     {
       id: 7,
       calRespondre: false,
