@@ -440,53 +440,124 @@ export default function Home() {
   const preguntes = [
     {
       id: 1,
+      pregunta: 1,
       calRespondre: true,
-      text: 'Quin és l\'element decoratiu més repetit a casa dels nuvis?',
+      text: 'Quin és l\'element decoratiu més repetit a casa nostra?',
+      textEs: '¿Cuál es el elemento decorativo más repetido en nuestra casa?',
       respostesCorrectes: ['Lluna', 'gossa', 'teckel', 'perra', 'luna'],
-    }, /*
+    }, 
     {
       id: 2,
+      pregunta: 2,
       calRespondre: true,
       text: 'Quina es la marca de xocolata desfeta preferida dels nuvis? (Pista: És una marca lleidatana)',
+      textEs: '¿Cuál es la marca de chocolate a la taza preferida de los novios? (Pista: Es una marca leridana)',
       respostesCorrectes: ['jolonch'],
     },
     {
       id: 3,
+      pregunta: 3,
       calRespondre: true,
-      text: 'Nom complert del poble del Dani? (Ningú ha dit que sería un camí de roses...)',
-      respostesCorrectes: ['Bellcaire d\'Urgell', 'bellcaire urgell', 'belcaire de urgel', 'belcaire urgel'],
+      text: 'Qué necessita afegir la Clàudia al seu cafè per fer-lo perfecte?',
+      textEs: '¿Qué necesita añadir Clàudia a su café para que sea perfecto?',
+      respostesCorrectes: ['canyella', 'canela', 'canela en rama'],
     },
     {
       id: 4,
+      pregunta: 4,
       calRespondre: true,
-      text: 'Nom complert del poble de la Clàudia? (Double challenge! Ànims! Aquell on hi ha la piscina... Saps?)',
-      respostesCorrectes: ['aldehuela del codonal', 'aldehuela codonal'],
+      text: 'Nom complert del poble del Dani? (Ningú ha dit que sería un camí de roses...)',
+      textEs: '¿Nombre completo del pueblo de Dani? (Nadie dijo que sería un camino de rosas...)',
+      respostesCorrectes: ['Bellcaire d\'Urgell', 'bellcaire urgell', 'belcaire de urgel', 'belcaire urgel'],
     },
     {
       id: 5,
+      pregunta: 5,
       calRespondre: true,
-      text: 'Quina és la marca de bombons preferits del Dani?',
-      respostesCorrectes: ['Lindt'],
+      text: 'Nom complert del poble de la Clàudia? (Double challenge! Ànims! Aquell on hi ha la piscina... Saps?)',
+      textEs: '¿Nombre completo del pueblo de Clàudia? (¡Doble reto! ¡Ánimo! Aquel donde está la piscina... ¿Sabes?)',
+      respostesCorrectes: ['aldehuela del codonal', 'aldehuela codonal'],
     },
     {
       id: 6,
+      pregunta: 6,
       calRespondre: true,
-      text: 'On volem anar de viatge de noces?',
-      respostesCorrectes: ['Orlando', 'parcs', 'florida'],
-    }, */
+      text: 'Quina és la marca de bombons preferits del Dani?',
+      textEs: '¿Cuál es la marca de bombones favorita de Dani?',
+      respostesCorrectes: ['Lindt'],
+    },
     {
       id: 7,
-      calRespondre: false,
-      text: 'Enhorabona! Heu superat la primera part. Ara heu de localitzar el bahúl i obriu-lo ¿amb el codi?',
-      respostesCorrectes: ['']
+      pregunta: 7,
+      calRespondre: true,
+      text: 'Quína és l\'última activitat a la que s\'ha apuntat la Clàudia aquest 2025?',
+      textEs: '¿Cuál es la última actividad en la que se ha apuntado Clàudia este 2025?',
+      respostesCorrectes: ['twerk', 'twerking', 'dancehall'],
     },
     {
       id: 8,
+      pregunta: 8,
       calRespondre: true,
-      text: 'Escriu el missatge, text o paraula secreta que has trobat:',
+      text: 'On volem anar de viatge de noces? Pot ser que necessitis utilitzar el comodí del públic...',
+      textEs: '¿A dónde queremos ir de viaje de novios? A lo mejor necesitas utilizar el comodín del público...',
+      respostesCorrectes: ['Orlando', 'parcs', 'florida', 'parques temáticos', 'parcs temàtics', 'eeuu', 'universal', 'disney world'],
+    }, 
+    {
+      id: 9,
+      pregunta: 9,
+      calRespondre: true,
+      text: 'On ens vam coneixer?',
+      textEs: '¿Dónde nos conocimos?',
+      respostesCorrectes: ['universitat', 'clase', 'universidad', 'economia', 'clase economia', 'upc'],
+    },
+    {
+      id: 10,
+      pregunta: 0,
+      calRespondre: false,
+      text: 'Enhorabona! Heu superat la primera part. Ara heu de localitzar el baül i obriu-lo. Per cert... Sabeu en quin any es va publicar el primer llibre on es parla de l\'Escola de Màgia i Bruixeria Hogwarts? (Són els 3 útlims digits)',
+      textEs: '¡Enhorabuena! Habéis superado la primera parte. Ahora tenéis que localizar el baúl y abrirlo. Por cierto... ¿Sabéis en qué año se publicó el primer libro donde se habla de la Escuela de Magia y Hechicería Hogwarts? (Son los 3 últimos dígitos)',
+      boto: 'Hem obert el baül!',
+      botoEs: '¡Hemos abierto el baúl!',
+      respostesCorrectes: ['']
+    },
+    {
+      id: 11,
+      pregunta: 10,
+      calRespondre: true,
+      text: 'Escriu el missatge, text o paraula secreta que has trobat dins del baül:',
+      textEs: 'Escribe el mensaje, texto o palabra secreta que has encontrado dentro del baúl:',
       respostesCorrectes: ['Dani'],
     },
+    {
+      id: 12,
+      pregunta: 0,
+      calRespondre: false,
+      text: 'Sou uns cracks! Heu superat la segona part. IMPORTANT: Desmonteu el puzzle, tanqueu el baül i gireu aleatoriament els números del candau després de tancar-lo.',
+      textEs: '¡Sois unos cracks! Habéis superado la segunda parte. IMPORTANTE: Desmontad el puzzle, cerrad el baúl y girad aleatoriamente los números del candado tras cerrarlo.',
+      boto: 'Hem tancat el baül!',
+      botoEs: '¡Hemos cerrado el baúl!',
+      respostesCorrectes: ['']
+    },
+    {
+      id: 13,
+      pregunta: 0,
+      calRespondre: false,
+      text: 'Aquesta és l\'última prova. Busqueu al Dani. Ell us donarà una cosa.',
+      textEs: 'Esta es la última prueba. Buscad a Dani. Él os dará algo.',
+      boto: 'Ja ho tenim!',
+      botoEs: '¡Lo tenemos!',
+      respostesCorrectes: ['']
+    },
+    {
+      id: 14,
+      pregunta: 11,
+      calRespondre: true,
+      text: 'Si us plau. Escriviu l\'última combinació numèrica a continuació. La trobareu en l\'endevinalla que us hem donat.',
+      textEs: 'Por favor. Escribid la última combinación numérica a continuación. La encontraréis en el acertijo que os hemos dado.',
+      respostesCorrectes: ['030525'],
+    }
   ];
+  
 
 
   const [wellcome, setWellcome] = useState(true);
@@ -665,13 +736,13 @@ export default function Home() {
               </>
             ) : (
               <>
-                <h5 className="mx-3 text-xl font-semibold mb-4 text-center">{preguntes[pasActual].text}</h5>
+                <h6 className="mx-3 text-xl font-semibold mb-4 text-center">{preguntes[pasActual].text}</h6>
                 <br />
                 <button
                   onClick={seguentPas}
                   className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
                 >
-                  Següent
+                  {preguntes[pasActual].boto}
                 </button>
 
               </>
