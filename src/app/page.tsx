@@ -6,8 +6,9 @@ import styles from "./page.module.css";
 import { Suspense, useState, } from 'react';
 import { ConfettiReal } from './ConfettiReal';
 
-
-
+interface FooterProps {
+  lang: string;
+}
 
 /*const styleScript = Style_Script({
   weight: '400',
@@ -17,6 +18,7 @@ import { ConfettiReal } from './ConfettiReal';
 
 // !!!!!!!!!!!!!!!!!!! FIX TODO
 // Hem d'aplicar la solució https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+
 
 function RenderQueryName() {
   const searchParams = useSearchParams()
@@ -391,7 +393,7 @@ function TitolInfoClauEs() {
   )
 }
 
-function FooterPersonalitzat() {
+function FooterPersonalitzat({ lang }: FooterProps) {
   return (
     <footer>
       <div className={styles.footer_container_relative}>
@@ -404,7 +406,8 @@ function FooterPersonalitzat() {
           style={{ width: '100%', height: 'auto' }}
         />
         <h4 className={styles.footer_container_text}>
-          Passeu-vos-ho molt bé!
+          {lang == 'ca' ? (<>Passeu-vos-ho molt bé!</>) : (<>Pasáoslo muy bien!
+          </>)}
         </h4>
       </div>
       <div style={{ textAlign: "center", fontSize: "small", padding: "10px" }}> · Dissenyada per nosaltres amb molt  &#129505; · </div>
@@ -445,7 +448,7 @@ export default function Home() {
       text: 'Quin és l\'element decoratiu més repetit a casa nostra?',
       textEs: '¿Cuál es el elemento decorativo más repetido en nuestra casa?',
       respostesCorrectes: ['Lluna', 'gossa', 'teckel', 'perra', 'luna'],
-    }, 
+    },
     {
       id: 2,
       pregunta: 2,
@@ -501,14 +504,14 @@ export default function Home() {
       text: 'On volem anar de viatge de noces? Pot ser que necessitis utilitzar el comodí del públic...',
       textEs: '¿A dónde queremos ir de viaje de novios? A lo mejor necesitas utilizar el comodín del público...',
       respostesCorrectes: ['Orlando', 'parcs', 'florida', 'parques temáticos', 'parcs temàtics', 'eeuu', 'universal', 'disney world'],
-    }, 
+    },
     {
       id: 9,
       pregunta: 9,
       calRespondre: true,
       text: 'On ens vam coneixer?',
       textEs: '¿Dónde nos conocimos?',
-      respostesCorrectes: ['universitat', 'clase', 'universidad', 'economia', 'clase economia', 'upc'],
+      respostesCorrectes: ['universitat', 'uni', 'clase', 'universidad', 'economia', 'clase economia', 'upc'],
     },
     {
       id: 10,
@@ -542,8 +545,8 @@ export default function Home() {
       id: 13,
       pregunta: 0,
       calRespondre: false,
-      text: 'Aquesta és l\'última prova. Busqueu al Dani. Ell us donarà una cosa.',
-      textEs: 'Esta es la última prueba. Buscad a Dani. Él os dará algo.',
+      text: 'Aquesta és l\'última prova. Busqueu al Dani. Ell us donarà una pista.',
+      textEs: 'Esta es la última prueba. Buscad a Dani. Él os dará una pista.',
       boto: 'Ja ho tenim!',
       botoEs: '¡Lo tenemos!',
       respostesCorrectes: ['']
@@ -557,9 +560,10 @@ export default function Home() {
       respostesCorrectes: ['030525'],
     }
   ];
-  
 
 
+
+  const [lang, setLang] = useState('ca');
   const [wellcome, setWellcome] = useState(true);
   const [valorNomGrup, setNomGrup] = useState('');
 
@@ -568,6 +572,13 @@ export default function Home() {
   const [respostaUsuari, setRespostaUsuari] = useState('');
   const [acabat, setAcabat] = useState(false);
   const [error, setError] = useState('');
+
+  const changeToCa = () => {
+    setLang('ca');
+  }
+  const changeToEs = () => {
+    setLang('es');
+  }
 
   const guardarNomGrup = () => {
     if (valorNomGrup.length > 0) {
@@ -628,8 +639,39 @@ export default function Home() {
             <LaCapcelera />
 
             <div className={styles.page}>
+
               <br />
               <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
+
+              <div className="container">
+                <br />
+                <div className="row">
+
+                  <div className="col text-center">
+                    <Image
+                      className='center-fit'
+                      src="/joc-boda/ca.png"
+                      alt="Ubicació"
+                      width={0}
+                      height={0}
+                      style={{ width: '40%', height: 'auto', marginLeft: '30px' }}
+                      onClick={changeToCa}
+                    />
+                  </div>
+                  <div className="col text-center">
+                    <Image
+                      className='center-fit'
+                      src="/joc-boda/es.png"
+                      alt="Ubicació"
+                      width={0}
+                      height={0}
+                      style={{ width: '40%', height: 'auto', marginRight: '30px' }}
+                      onClick={changeToEs}
+                    />
+                  </div>
+
+                </div>
+              </div>
               <br />
               <h4>Instruccions:</h4>
 
@@ -665,7 +707,7 @@ export default function Home() {
           </div>
 
           <div style={{ height: 'auto' }}>
-            <FooterPersonalitzat />
+            <FooterPersonalitzat lang={lang} />
           </div>
         </main>
 
@@ -694,7 +736,7 @@ export default function Home() {
           </div>
 
           <div style={{ height: 'auto' }}>
-            <FooterPersonalitzat />
+            <FooterPersonalitzat lang={lang} />
           </div>
         </main>
 
@@ -712,12 +754,12 @@ export default function Home() {
           <div className={styles.page}>
             <div className="text-start" ></div>
             <br />
-            <h1 className="mx-3">Endavant <b>{valorNomGrup}!</b></h1><br />
+            <h1 className="mx-3">{lang == 'ca' ? (<>Endavant <b>{valorNomGrup}!</b></>) : (<>¡Adelante <b>{valorNomGrup}!</b></>)}</h1><br />
 
             {preguntes[pasActual].calRespondre ? (
               <>
                 <h3 className="mx-3 text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
-                <p className="mb-4 mx-3">{preguntes[pasActual].text}</p>
+                <h6 className="mb-4 mx-4">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <input
                   type="text"
                   value={respostaUsuari}
@@ -756,7 +798,7 @@ export default function Home() {
         </div>
 
         <div style={{ height: 'auto' }}>
-          <FooterPersonalitzat />
+          <FooterPersonalitzat lang={lang} />
         </div>
       </main>
 
