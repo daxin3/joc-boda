@@ -302,7 +302,7 @@ export default function Home() {
 
                 </>}
 
-              <div className="container">
+              {/* <div className="container">
                 <br />
                 <div className="row">
 
@@ -330,8 +330,63 @@ export default function Home() {
                   </div>
 
                 </div>
+              </div> */}
+              <div className="container my-4">
+                <div className="row justify-content-center align-items-center">
+
+                  <div className="col-3 col-md-2 text-center">
+                    <div
+                      onClick={changeToCa}
+                      style={{
+                        cursor: 'pointer',
+                        transition: 'transform 0.2s ease',
+                        display: 'inline-block',
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
+                      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                    >
+                      <Image
+                        src="/joc-boda/ca.png"
+                        alt="Català"
+                        width={48}
+                        height={32}
+                        style={{
+                          borderRadius: '6px',
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                        }}
+                      />
+                      <div style={{ fontSize: '0.9rem', marginTop: '0.3rem' }}>Català</div>
+                    </div>
+                  </div>
+
+                  <div className="col-3 col-md-2 text-center">
+                    <div
+                      onClick={changeToEs}
+                      style={{
+                        cursor: 'pointer',
+                        transition: 'transform 0.2s ease',
+                        display: 'inline-block',
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
+                      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                    >
+                      <Image
+                        src="/joc-boda/es.png"
+                        alt="Castellano"
+                        width={48}
+                        height={32}
+                        style={{
+                          borderRadius: '6px',
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                        }}
+                      />
+                      <div style={{ fontSize: '0.9rem', marginTop: '0.3rem' }}>Castellano</div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
-              <br />
+
               {lang == 'ca' ?
                 <>
                   <h4>Instruccions:</h4>
