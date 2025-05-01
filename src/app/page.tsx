@@ -337,62 +337,6 @@ function SectionCalendari() {
 
 
 
-function SectionFormulari() {
-  if (IsCat()) {
-    return (
-      <section>
-        <h1 style={{ textAlign: "center" }}>Necessitem la teva confirmació</h1>
-        <div className={styles.main_botton}>
-          <h3><a style={{ color: 'white', textDecoration: 'unset' }}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSf2eCvQpioCZ1syxQjiLxGDFWyqrWfrzmiL6imqAgHLL-jquQ/viewform?usp=header' target='blank'>
-            Obrir el formulari
-          </a></h3>
-        </div>
-        <br />
-        <p style={{ textAlign: "center" }}>
-          Si tens qualsevol dubte ens pots contactar tant per WhatsApp com per telèfon.
-        </p>
-
-      </section>
-    )
-  } else {
-    return (
-      <section>
-        <h1 style={{ textAlign: "center" }}>Necesitamos tu confirmación</h1>
-        <div className={styles.main_botton}>
-          <h3><a style={{ color: 'white', textDecoration: 'unset' }}
-            href='https://docs.google.com/forms/d/e/1FAIpQLSf2eCvQpioCZ1syxQjiLxGDFWyqrWfrzmiL6imqAgHLL-jquQ/viewform?usp=header' target='blank'>
-            Abrir el formulario
-          </a></h3>
-        </div>
-        <br />
-        <p style={{ textAlign: "center" }}>
-          Si tenéis cualquier duda nos podéis contactar tanto por WhatsApp como por teléfono.
-        </p>
-
-      </section>
-    )
-  }
-}
-
-function TitolInfoClau() {
-  if (IsCat()) {
-    return (
-      <h1>Informació clau</h1>
-    )
-  } else {
-    return (
-      <TitolInfoClauEs />
-    )
-  }
-}
-
-function TitolInfoClauEs() {
-  return (
-    <h1>Información clave</h1>
-  )
-}
-
 function FooterPersonalitzat({ lang }: FooterProps) {
   return (
     <footer>
@@ -406,7 +350,7 @@ function FooterPersonalitzat({ lang }: FooterProps) {
           style={{ width: '100%', height: 'auto' }}
         />
         <h4 className={styles.footer_container_text}>
-          {lang == 'ca' ? (<>Passeu-vos-ho molt bé!</>) : (<>Pasáoslo muy bien!
+          {lang == 'ca' ? (<>Que us ho passeu pipa!</>) : (<>¡Que lo paséis en grande!
           </>)}
         </h4>
       </div>
@@ -471,7 +415,7 @@ export default function Home() {
       calRespondre: true,
       text: 'Nom complert del poble del Dani? (Ningú ha dit que sería un camí de roses...)',
       textEs: '¿Nombre completo del pueblo de Dani? (Nadie dijo que sería un camino de rosas...)',
-      respostesCorrectes: ['Bellcaire d\'Urgell', 'bellcaire urgell', 'belcaire de urgel', 'belcaire urgel'],
+      respostesCorrectes: ['Bellcaire d\'Urgell', 'bellcaire urgell', 'belcaire de urgel', 'bellcaire de urgel', 'bellcaire de urgell', 'belcaire urgel'],
     },
     {
       id: 5,
@@ -529,7 +473,7 @@ export default function Home() {
       calRespondre: true,
       text: 'Escriu el missatge, text o paraula secreta que has trobat dins del baül:',
       textEs: 'Escribe el mensaje, texto o palabra secreta que has encontrado dentro del baúl:',
-      respostesCorrectes: ['Dani'],
+      respostesCorrectes: ['13112015', '13-11-2015', '13/11/2015', '13 11 2015'],
     },
     {
       id: 12,
@@ -555,8 +499,8 @@ export default function Home() {
       id: 14,
       pregunta: 11,
       calRespondre: true,
-      text: 'Si us plau. Escriviu l\'última combinació numèrica a continuació. La trobareu en l\'endevinalla que us hem donat.',
-      textEs: 'Por favor. Escribid la última combinación numérica a continuación. La encontraréis en el acertijo que os hemos dado.',
+      text: 'Si us plau. Escriviu l\'última combinació numèrica a continuació. Heu desxifrat la targeta?',
+      textEs: 'Por favor. Escribid la última combinación numérica a continuación. ¿Habéis descifrado la tarjeta?',
       respostesCorrectes: ['030525'],
     }
   ];
@@ -641,7 +585,15 @@ export default function Home() {
             <div className={styles.page}>
 
               <br />
-              <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
+              {lang == 'ca' ?
+                <>
+                  <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
+
+                </> :
+                <>
+                  <h1 className="mx-3 text-center">¡Hemos preparado un juego para saber si vuestro grupo es el más competitivo!</h1>
+
+                </>}
 
               <div className="container">
                 <br />
@@ -673,16 +625,32 @@ export default function Home() {
                 </div>
               </div>
               <br />
-              <h4>Instruccions:</h4>
+              {lang == 'ca' ?
+                <>
+                  <h4>Instruccions:</h4>
 
-              <ul>
-                <li className="mx-1" ><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
-                <li className="mx-1" >Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
-                <li className="mx-1" >Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
-                <li className="mx-1" >Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda (guiño).</li>
-              </ul>
+                  <ul>
+                    <li className="mx-1" ><b>Només una persona del grup</b> ha d&apos;utilitzar aquesta aplicació.</li>
+                    <li className="mx-1" >Podeu dividir-vos en grups més petits si el vostre grup és massa gran, o simplement si així ho desitgeu!</li>
+                    <li className="mx-1" >Heu de col·laborar entre vosaltres, com en un Escape Room.</li>
+                    <li className="mx-1" >Recordeu que NO ESTEU SOLS. Si una pregunta se us fa bola, podeu demanar ajuda. 😉</li>
+                  </ul>
 
-              <h2 className="mx-3">Poseu-vos un nom d&apos;equip:</h2>
+                  <h2 className="mx-3 text-center">Trieu un nom poderós per a la vostra colla màgica!</h2>
+                </> :
+                <>
+                  <h4>Instrucciones:</h4>
+
+                  <ul>
+                    <li className="mx-1"><b>Solo una persona del grupo</b> debe utilizar esta aplicación.</li>
+                    <li className="mx-1">Podéis dividiros en grupos más pequeños si vuestro grupo es demasiado grande, o simplemente si así lo deseáis.</li>
+                    <li className="mx-1">Debéis colaborar entre vosotros, como en un Escape Room.</li>
+                    <li className="mx-1">Recordad que NO ESTÁIS SOLOS. Si una pregunta se os atraganta, podéis pedir ayuda. 😉</li>
+                  </ul>
+
+                  <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
+                </>}
+
 
               <input
                 type="text"
@@ -693,12 +661,24 @@ export default function Home() {
 
               <br />
               <div></div>
-              <button
-                onClick={guardarNomGrup}
-                className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-              >
-                Començar
-              </button>
+              {lang == 'ca' ?
+                <>
+                  <button
+                    onClick={guardarNomGrup}
+                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+                  >
+                    Començar el joc
+                  </button>
+                </> :
+                <>
+                  <button
+                    onClick={guardarNomGrup}
+                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+                  >
+                    Empezar el juego
+                  </button>
+                </>}
+
               <br /><br />
 
             </div>
@@ -758,7 +738,7 @@ export default function Home() {
 
             {preguntes[pasActual].calRespondre ? (
               <>
-                <h3 className="mx-3 text-xl font-semibold mb-4">{pasActual + 1}.ª pregunta</h3>
+                <h3 className="mx-3 text-xl font-semibold mb-4">{preguntes[pasActual].pregunta}.ª pregunta</h3>
                 <h6 className="mb-4 mx-4">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <input
                   type="text"
@@ -778,7 +758,7 @@ export default function Home() {
               </>
             ) : (
               <>
-                <h6 className="mx-3 text-xl font-semibold mb-4 text-center">{preguntes[pasActual].text}</h6>
+                <h6 className="mx-3 text-xl font-semibold mb-4 text-center">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <br />
                 <button
                   onClick={seguentPas}
@@ -807,256 +787,6 @@ export default function Home() {
   );
 
 
-  return (
-    <div>
-      <div className={styles.header_background}>
-        <picture>
-          <source media="(max-width: 600px)" srcSet="/joc-boda/capcelera_mobile.png" />
-          <img
-            className='center-fit'
-            src="/joc-boda/capcelera_desktop_ics.png"
-            alt="Wellcome"
-            width={1280}
-            height={600}
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </picture>
-      </div>
-      <div className={styles.page}>
-
-        <Suspense fallback={<SectionCartaEs />}><SectionCarta /></Suspense>
-
-
-        <div className={styles.photo_container}>
-          {Array.from({ length: totalImages }).map((_, index) => (
-            <Image
-              key={index}
-              src={`/joc-boda/photos/img${index}.jpg`}
-              alt={`Foto ${index + 1}`}
-              width={0}
-              height={0}
-              style={{ width: '100%', height: 'auto' }}
-              className={`${styles.photo} ${styles[`photo${index + 1}`]}`}
-            />
-
-          ))}
-          <Image
-            key={totalImages + 1}
-            src={`/joc-boda/photos/gif1.gif`}
-            alt={`Foto ${totalImages + 2}`}
-            width={0}
-            height={0}
-            style={{ width: '100%', height: 'auto' }}
-            className={`${styles.photo}`}
-          />
-        </div>
-        <br /><br />
-
-
-        <Suspense><SectionCalendari /></Suspense>
-
-        <br />
-        <div className={styles.call_to_action_background}>
-          <Suspense><SectionFormulari /></Suspense>
-        </div>
-        <br />
-
-
-        <section>
-          <Suspense fallback={<TitolInfoClauEs />}><TitolInfoClau /></Suspense>
-          <br />
-          <div className={styles.contenidor_targeta_info_b}>
-            <div className={styles.targeta_info_a}>
-              <div className={styles.image_emo_container}>
-                <Image
-                  className='center-fit'
-                  src="/joc-boda/point.png"
-                  alt="Ubicació"
-                  width={0}
-                  height={0}
-                  style={{ width: '40%', height: 'auto' }}
-                /></div>
-              <div className={styles.inline_block}>
-                <h5>Ajuntament de Granollers</h5>
-                <p style={{ textAlign: 'center' }}>
-                  <a style={{ color: 'rgb(225 96 1 / 91%)', textDecoration: 'underline', fontSize: 'small' }} href='https://maps.app.goo.gl/ye9TL6sBceB6GMa6A' target='blank'>https://maps.app.goo.gl/ye9TL6sBceB6GMa6A</a></p>
-                <p style={{ padding: "10px 25px 10px 25px" }}>Plaça de la Porxada, 6, 08401 - Granollers, Barcelona</p>
-
-              </div>
-            </div>
-            <div className={styles.targeta_info_b}>
-              <div className={styles.image_emo_container}>
-                <Image
-                  className='center-fit'
-                  src="/joc-boda/point.png"
-                  alt="Ubicació"
-                  width={0}
-                  height={0}
-                  style={{ width: '40%', height: 'auto' }}
-                /></div>
-              <div className={styles.inline_block}>
-                <h5>Masia <i>El Folló</i></h5>
-                <p style={{ textAlign: 'center' }}>
-                  <a style={{ color: 'rgb(32 151 86)', textDecoration: 'underline', fontSize: 'small' }} href='https://maps.app.goo.gl/x1FCPJ1hXHTJnhqf9' target='blank'>https://maps.app.goo.gl/x1FCPJ1hXHTJnhqf9</a></p>
-                <p style={{ padding: "10px 25px 10px 25px" }}>Masía El Folló, Carrer Diseminado S-N, 08593 - Tagamanent, Barcelona</p>
-
-              </div>
-            </div>
-            <div className={styles.targeta_info_c}>
-              <div className={styles.image_emo_container}>
-                <Image
-                  className='center-fit'
-                  src="/joc-boda/dress_icon.png"
-                  alt="Ubicació"
-                  width={0}
-                  height={0}
-                  style={{ width: '40%', height: 'auto', paddingTop: '20px' }}
-                /></div>
-              <div className={styles.inline_block}>
-                <h5>Dress code</h5>
-                <p style={{ textAlign: "center" }}>
-                  Dressy casual: semiformal</p><br />
-              </div>
-            </div>
-            <Suspense fallback={<BlocHotelEs />}><BlocHotel /></Suspense>
-          </div>
-          <br /><br />
-          <h2>Granollers</h2>
-          <Image
-            className='center-fit'
-            src="/joc-boda/mapa_grano_b.png"
-            alt="Wellcome to Granollers"
-            width={0}
-            height={0}
-            style={{ width: '100%', height: 'auto' }}
-          />
-          <br /><br /><br />
-          <h2>Masia <i>El Folló</i></h2>
-          <p>Saliendo de Granollers dirección Vic, la masía se encuentra a 20 minutos por la C-17.</p>
-          <Image
-            className='center-fit'
-            src="/joc-boda/elfollomasiadib.png"
-            alt="Wellcome to Masia 'El Folló'"
-            width={0}
-            height={0}
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </section>
-        <br />
-      </div>
-      <footer>
-        <div className={styles.footer_container_relative}>
-          <Image
-            className='center-fit'
-            src="/joc-boda/footer_edit_d.png"
-            alt="Wellcome"
-            width={0}
-            height={0}
-            style={{ width: '100%', height: 'auto' }}
-          />
-          <h4 className={styles.footer_container_text}>
-            Fins aviat!
-          </h4>
-        </div>
-        <div style={{ textAlign: "center", fontSize: "small", padding: "20px" }}> · Invitació dissenyada per nosaltres amb molt  &#129505; · Especialment dedicada al Tacu · </div>
-        <br />
-      </footer>
-    </div>
-  );
-
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/joc-boda/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-          <Suspense>
-            <li><RenderQueryName /></li>
-          </Suspense>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/joc-boda/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/joc-boda/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/joc-boda/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/joc-boda/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
 }
 
 
