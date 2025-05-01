@@ -1,9 +1,10 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation';
+//import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Suspense, useState, } from 'react';
+//import { Suspense, useState, } from 'react';
+import { useState } from 'react';
 import { ConfettiReal } from './ConfettiReal';
 
 interface FooterProps {
@@ -19,7 +20,7 @@ interface FooterProps {
 // !!!!!!!!!!!!!!!!!!! FIX TODO
 // Hem d'aplicar la solució https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
 
-
+/*
 function RenderQueryName() {
   const searchParams = useSearchParams()
   let destinatari = searchParams.get('x')
@@ -42,299 +43,7 @@ function IsCat() {
   if (idioma == 'ca') return true
   else return false
 }
-
-
-function BlocHotel() {
-  if (IsCat()) {
-    return (
-      <div className={styles.targeta_info_d}>
-        <div className={styles.image_emo_container}>
-          <Image
-            className='center-fit'
-            src="/joc-boda/hotel2.png"
-            alt="Ubicació"
-            width={0}
-            height={0}
-            style={{ width: '40%', height: 'auto' }}
-          /></div>
-        <div className={styles.inline_block}>
-          <h5>Allotjament / Taxi</h5>
-          <p style={{ padding: "10px 25px 10px 25px" }} >
-            Si necessiteu allotjament o taxi, ens podeu contactar per facilitar-vos referències.
-          </p>
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <BlocHotelEs />
-    )
-  }
-}
-
-function BlocHotelEs() {
-  return (
-    <div className={styles.targeta_info_d}>
-      <div className={styles.image_emo_container}>
-        <Image
-          className='center-fit'
-          src="/joc-boda/hotel2.png"
-          alt="Ubicació"
-          width={0}
-          height={0}
-          style={{ width: '40%', height: 'auto' }}
-        /></div>
-      <div className={styles.inline_block}>
-        <h5>Alojamiento / Taxi</h5>
-        <p style={{ padding: "10px 25px 10px 25px" }} >
-          Si necesitáis alojamiento o taxi, nos podéis contactar para ofreceros referencias y contactos.
-        </p>
-      </div>
-    </div>
-  )
-}
-
-function SectionCarta() {
-  if (IsCat()) {
-    return (
-      // CATALÀ
-      <section>
-        <h1>Que sí! Ens casem!!</h1><br />
-
-        <Suspense>
-          <h3>Hola <RenderQueryName />,</h3>
-        </Suspense><br />
-        <p>Estem superfeliços! <b>Reserva&apos;t la data</b> i prepara&apos;t per a riure, menjar, beure,
-          ballar i passar-ho bé amb nosaltres.</p>
-        <p>Fa gairebé 10 anys ens vam conèixer a la universitat, segurament en una de les etapes més dures
-          que hem viscut fins al moment, encara que ara mateix dubtem si no és més dur l&apos;organització d&apos;un
-          casament. &#128521;
-        </p>
-        <p>Tres anys més tard vàrem decidir començar a viure junts, sense saber que uns mesos més
-          tard arribaria una pandèmia que ens obligaria a passar el 200% del temps plegats. I per si
-          no fos prou, també treballant a la mateixa empresa.</p>
-        <p>Superada aquesta prova, ens vam enamorar cegament de l&apos;amor més fidel i real que existeix,
-          la nostra estimada Lluna, que ens va convertir en mare i pare, i que ens prepara per al
-          que vindrà més endavant.
-        </p>
-        <p>
-          Fa ja més d&apos;un any vam decidir donar el gran pas. Una decisió molt més comprometedora
-          que unes noces, UNA HIPOTECA!!, així que... Un casament? Serà cosir i cantar!
-        </p>
-        <p>
-          Ara vivim viatjant entre províncies. Barcelona, Lleida i Segòvia són les terres on tenim
-          trossets del nostre cor, en cadascuna de les persones que les habiten i que avui esteu
-          llegint aquestes línies.
-        </p>
-        <p>Esperem que gaudiu tant com nosaltres del nostre dia. Us enviem una gran abraçada!</p>
-        <br />
-        <p>Al <b>formulari d&apos;assistència</b> (més a baix) has de confirmar si comptem amb tu
-          i un qüestionari sobre al·lèrgens. Confirma&apos;ns la teva assistència el més aviat possible,
-          si us plau. Així organitzar-ho tot ens serà molt més fàcil.
-        </p>
-        <p><b>Recorda, “La teva presència és el nostre regal més preuat, per això aquesta
-          invitació és personal i intransferible”</b>
-        </p>
-        <p>Esperem veure&apos;t molt aviat. Molts petons! &#129505;</p>
-        <p>Dani i Clàudia</p>
-      </section>
-    )
-  }
-  else {
-    return (
-      <SectionCartaEs />
-    )
-  }
-}
-
-function SectionCartaEs() {
-  return (
-    <section>
-      <h1>¡Que sí! ¡¡Nos casamos!!</h1><br />
-
-      <Suspense>
-        <h3>Hola <RenderQueryName />,</h3>
-      </Suspense><br />
-      <p>¡Estamos superfelices! <b>Resérvate la fecha</b> y prepárate para reír, comer, beber, bailar
-        y pasarlo bien con nosotros.</p>
-      <p>Hace casi 10 años nos conocimos en la universidad, seguramente en una de las etapas más duras
-        que hemos vivido por el momento, aunque ahora mismo dudamos si no es más dura la organización
-        de una boda. &#128521;
-      </p>
-      <p>Tres años más tarde nos aventuramos a vivir juntos sin saber que unos meses más tarde vendría una pandemia que nos obligaría a pasar el 200% del tiempo juntos. Y por si fuera poco, encima, trabajando en la misma empresa.</p>
-      <p>Superada esa prueba, nos enamoramos ciegamente del amor más fiel y real que existe, nuestra querida Luna, que nos convirtió en mamá y papá, y que nos prepara para lo que vendrá más adelante.
-      </p>
-      <p>Hace ya más de un año nos decidimos a dar el paso con algo mucho más comprometedor que una boda, ¡¡UNA HIPOTECA!!, así que... ¿Una boda? Pan comido.</p>
-      <p>Ahora vivimos deambulando entre provincias. Barcelona, Lleida y Segovia es donde tenemos trocitos de nuestro corazón, en cada una de las personas que las habitan y que hoy estáis leyendo estos párrafos.</p>
-      <p>¡¡¡Esperamos que disfrutéis tanto como nosotros de nuestro día, un abrazo muuuy grande!!!</p>
-      <br />
-      <p>En el <b>formulario de asistencia </b> (más abajo) debes confirmar si vas a asistir a la boda y un cuestionario sobre alérgenos. Confírmanos tu asistencia lo antes posible, por favor. Así organizarlo todo nos será mucho más fácil.
-      </p>
-      <p><b>Recuerda, “Tu presencia es nuestro regalo más preciado, por eso esta invitación es personal e intransferible”</b>
-      </p>
-      <p>Esperamos verte muy pronto. ¡Mil besos! &#129505;</p>
-      <p>Dani y Clàudia</p>
-    </section>
-  )
-}
-
-function SectionCalendari() {
-  if (IsCat()) {
-    return (
-      <section style={{ width: "100%" }}>
-        <h1>Dissabte, 3 de Maig</h1>
-
-        <div className={styles.columna_blocs_horaris_container}>
-
-          <div className={styles.columna_bloc_horari_item}>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                <b>11:30h</b> - Plaça de la Porxada</h2>
-              <p className={styles.bloc_subtitol}>
-                &#127865; <b>Canya o copeta de vi prèvia</b></p>
-              <p className={styles.bloc_detall}>
-                Si arribes puntual, pots prendre alguna cosa als bars de la Porxada o del voltant,
-                els quals tens assenyalats en el plànol adjunt. &#127867;</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                12:00h - Ajuntament</h2>
-              <p className={styles.bloc_subtitol}>
-                &#128141; <b>Cerimònia</b></p>
-              <p className={styles.bloc_detall}>
-                A la sala de l&apos;ajuntament amb capacitat per a 60 persones.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                12:40h - Plaça de la Porxada</h2>
-              <p className={styles.bloc_subtitol}>
-                &#128247; <b>Unes fotos!</b></p>
-              <p className={styles.bloc_detall}>
-                Fotografies grupals per a immortalitzar el moment.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                <b>13:30h</b> - Masia <i>El Folló</i></h2>
-              <p className={styles.bloc_subtitol}>
-                &#129346; <b>Recepció dels convidats</b></p>
-              <p className={styles.bloc_detall}>
-                Ens desplacem fins a la masia. </p>
-              <p className={styles.bloc_detall}>
-                Ja ets aquí, així que agafa la teva copeta de benvinguda i gaudeix mentre arriben tots els convidats. &#128521;&#127863;</p>
-            </div>
-          </div>
-
-          <div className={styles.columna_bloc_horari_item}>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>14:00h - És hora de dinar!</h2>
-              <p className={styles.bloc_subtitol}>&#127856; <b>Còctel en la masia</b></p>
-              <p className={styles.bloc_detall}>
-                Amb platerets casolans i de temporada, preparats per la Mercè i el seu equip.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>17:30h - Festa!</h2>
-              <p className={styles.bloc_subtitol}>&#127881; <b>A ballar!</b></p>
-              <p className={styles.bloc_detall}>
-                Barra lliure i música per a tots! <br /> Per cert..., ja heu completat tots els jocs?</p>
-
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>21:00h - Sopada</h2>
-              <p className={styles.bloc_subtitol}>&#129366; <b>Per recuperar forces</b></p>
-              <p className={styles.bloc_detall}>
-                Tenim diferents coques i dolços per matar el cuquet.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora_f}>Rememora i comparteix!</h2>
-              <p className={styles.bloc_subtitol}>
-                &#128248; <b>Esperem rebre les teves millors fotos</b></p>
-              <p className={styles.bloc_detall}>
-                Escaneja el QR i comparteix amb nosaltres les millors instantànies.</p>
-            </div>
-          </div>
-        </div>
-
-      </section>
-    )
-  } else {
-    return (
-      <section style={{ width: "100%" }}>
-        <h1>Sábado, 3 de Mayo</h1>
-
-        <div className={styles.columna_blocs_horaris_container}>
-
-          <div className={styles.columna_bloc_horari_item}>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                <b>11:30h</b> - Plaça de la Porxada</h2>
-              <p className={styles.bloc_subtitol}>
-                &#127865; <b>Cervecita o copita de vino previa</b></p>
-              <p className={styles.bloc_detall}>
-                Si llegas puntual, puedes tomar algo en los bares de la Porxada o en sus alrededores,
-                los cuales están señalados en el plano adjunto. &#127867;</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                12:00h - Ajuntament</h2>
-              <p className={styles.bloc_subtitol}>
-                &#128141; <b>Ceremonia</b></p>
-              <p className={styles.bloc_detall}>
-                En la sala del ayuntamiento con capacidad para 60 personas.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                12:40h - Plaça de la Porxada</h2>
-              <p className={styles.bloc_subtitol}>
-                &#128247; <b>¡Unas fotos!</b></p>
-              <p className={styles.bloc_detall}>
-                Fotografías grupales para inmortalizar el momento.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>
-                <b>13:30h</b> - Masia <i>El Folló</i></h2>
-              <p className={styles.bloc_subtitol}>
-                &#129346; <b>Recepción de los invitados</b></p>
-              <p className={styles.bloc_detall}>
-                Nos desplazamos hasta la masía. </p>
-              <p className={styles.bloc_detall}>
-                Ya estás aquí, así que coge tu copita de bienvenida y disfruta mientras llegan todos los invitados. &#128521;&#127863;</p>
-            </div>
-          </div>
-
-          <div className={styles.columna_bloc_horari_item}>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>14:00h - ¡A comer!</h2>
-              <p className={styles.bloc_subtitol}>&#127856; <b>Cóctel en la masía</b></p>
-              <p className={styles.bloc_detall}>
-                Con platitos caseros y de temporada, preparados por Mercè y su equipo.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>17:30h - ¡Fiesta!</h2>
-              <p className={styles.bloc_subtitol}>&#127881; <b>A bailar</b></p>
-              <p className={styles.bloc_detall}>
-                ¡Barra libre y música para todos! <br />Por cierto... ¿Ya habéis completado todos los juegos? </p>
-
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora}>21:00h - Sopada (Cena)</h2>
-              <p className={styles.bloc_subtitol}>&#129366; <b>¡Hora de Cenar!</b></p>
-              <p className={styles.bloc_detall}>
-                Tenemos distintas cocas y dulces para matar el gusanillo.</p>
-            </div>
-            <div className={styles.bloc_hora}>
-              <h2 className={styles.bloc_titol_hora_f}>¡Rememora y comparte!</h2>
-              <p className={styles.bloc_subtitol}>
-                &#128248; <b>Esperamos recibir tus mejores fotos</b></p>
-              <p className={styles.bloc_detall}>
-                Escanea el QR y comparte con nosotros tus mejores instantáneas.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
-}
-
+*/
 
 
 function FooterPersonalitzat({ lang }: FooterProps) {
@@ -380,9 +89,7 @@ function LaCapcelera() {
 
 export default function Home() {
 
-  const totalImages = 17;
-
-
+  //const totalImages = 17;
 
   const preguntes = [
     {
