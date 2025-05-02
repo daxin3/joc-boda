@@ -307,11 +307,11 @@ export default function Home() {
               <br />
               {lang == 'ca' ?
                 <>
-                  <h2 className="mx-3 text-center" >Només una colla pot destacar per damunt de les altres... Esteu a punt per demostrar que sou vosaltres?</h2>
+                  <h2 style={{textAlign: "center"}} className="mx-3 text-center" >Només una colla pot destacar per damunt de les altres... Esteu a punt per demostrar que sou vosaltres?</h2>
 
                 </> :
                 <>
-                  <h2 className="mx-3 text-center">Solo un grupo puede destacar sobre los demás... ¿Estáis listos para demostrar que sois vosotros?</h2>
+                  <h2 style={{textAlign: "center"}} className="mx-3 text-center">Solo un grupo puede destacar sobre los demás... ¿Estáis listos para demostrar que sois vosotros?</h2>
 
                 </>}
 
@@ -431,7 +431,7 @@ export default function Home() {
                 type="text"
                 value={valorNomGrup}
                 onChange={(e) => setNomGrup(e.target.value)}
-                className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+                className="border border-gray-300 rounded px-3 py-2 w-full mb-2 text-center"
               />
 
               <br />
@@ -440,7 +440,7 @@ export default function Home() {
                 <>
                   <button
                     onClick={guardarNomGrup}
-                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center text-center"
                   >
                     Començar el joc
                   </button>
@@ -448,7 +448,7 @@ export default function Home() {
                 <>
                   <button
                     onClick={guardarNomGrup}
-                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
+                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center text-center"
                   >
                     Empezar el juego
                   </button>
@@ -487,11 +487,7 @@ export default function Home() {
               </div>
               <h1>🎉 Felicitats! 🎉</h1>
               <h3>Heu completat el repte!</h3>
-              <ul>
-        {data.map((item, index) => (
-          <li key={index}>{JSON.stringify(item)}</li>
-        ))}
-      </ul>
+              
             </div>
           </div>
 
@@ -514,7 +510,7 @@ export default function Home() {
           <div className={styles.page}>
             <div className="text-start" ></div>
             <br />
-            <h1 className="mx-3">{lang == 'ca' ? (<>Endavant <b>{valorNomGrup}!</b></>) : (<>¡Adelante <b>{valorNomGrup}!</b></>)}</h1><br />
+            <h1 className="textmx-3">{lang == 'ca' ? (<>Endavant <b>{valorNomGrup}!</b></>) : (<>¡Adelante <b>{valorNomGrup}!</b></>)}</h1><br />
 
             {preguntes[pasActual].calRespondre ? (
               <>
