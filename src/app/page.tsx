@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 import { useState } from 'react';
 import { ConfettiReal } from './ConfettiReal';
 
+
 interface FooterProps {
   lang: string;
 }
@@ -89,7 +90,11 @@ function LaCapcelera() {
 
 export default function Home() {
 
+
+
   //const totalImages = 17;
+  //const horaInici = new Date();
+  //const [horaFi, setHoraFi] = useState(new Date());
 
   const preguntes = [
     {
@@ -213,7 +218,6 @@ export default function Home() {
   ];
 
 
-
   const [lang, setLang] = useState('ca');
   const [wellcome, setWellcome] = useState(true);
   const [valorNomGrup, setNomGrup] = useState('');
@@ -230,6 +234,7 @@ export default function Home() {
   const changeToEs = () => {
     setLang('es');
   }
+
 
   const guardarNomGrup = () => {
     if (valorNomGrup.length > 0) {
@@ -248,10 +253,17 @@ export default function Home() {
         setPasActual(pasActual + 1);
         setRespostaUsuari('');
       } else {
+        //setHoraFi(new Date());
         setAcabat(true);
       }
     } else {
-      setError('Resposta incorrecta. Torna-ho a provar.');
+      if (lang == 'ca') {
+        setError('Resposta incorrecta. Torna-ho a provar.');
+      } else {
+        setError('Respuesta incorrecta. Inténtalo de nuevo.');
+
+      }
+      
     }
   };
 
@@ -260,6 +272,7 @@ export default function Home() {
       setPasActual(pasActual + 1);
       setRespostaUsuari('');
     } else {
+      //setHoraFi(new Date());
       setAcabat(true);
     }
   };
@@ -294,11 +307,11 @@ export default function Home() {
               <br />
               {lang == 'ca' ?
                 <>
-                  <h1 className="mx-3 text-center" >Hem preparat un joc per saber si la vostra colla és la més competitiva!</h1>
+                  <h2 className="mx-3 text-center" >Només una colla pot destacar per damunt de les altres... Esteu a punt per demostrar que sou vosaltres?</h2>
 
                 </> :
                 <>
-                  <h1 className="mx-3 text-center">¡Hemos preparado un juego para saber si vuestro grupo es el más competitivo!</h1>
+                  <h2 className="mx-3 text-center">Solo un grupo puede destacar sobre los demás... ¿Estáis listos para demostrar que sois vosotros?</h2>
 
                 </>}
 
@@ -409,10 +422,10 @@ export default function Home() {
                     <li className="mx-1">Debéis colaborar entre vosotros, como en un Escape Room.</li>
                     <li className="mx-1">Recordad que NO ESTÁIS SOLOS. Si una pregunta se os atraganta, podéis pedir ayuda. 😉</li>
                   </ul>
-
+                  <br />
                   <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
                 </>}
-
+                
 
               <input
                 type="text"
@@ -474,6 +487,11 @@ export default function Home() {
               </div>
               <h1>🎉 Felicitats! 🎉</h1>
               <h3>Heu completat el repte!</h3>
+              <ul>
+        {data.map((item, index) => (
+          <li key={index}>{JSON.stringify(item)}</li>
+        ))}
+      </ul>
             </div>
           </div>
 
@@ -508,7 +526,7 @@ export default function Home() {
                   onChange={(e) => setRespostaUsuari(e.target.value)}
                   className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
                 />
-                {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+                {error && <p className="text-red-500 text-sm mb-2" style={{ color: '#e52323' }}>{error}</p>}
                 <br />
                 <div></div>
                 <button
