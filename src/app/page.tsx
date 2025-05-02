@@ -438,20 +438,24 @@ export default function Home() {
               <div></div>
               {lang == 'ca' ?
                 <>
-                  <button
-                    onClick={guardarNomGrup}
-                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center text-center"
-                  >
-                    Començar el joc
-                  </button>
+                <div className="flex items-center justify-center min-h-screen">
+  <button 
+  onClick={guardarNomGrup} 
+  className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+    Començar el joc
+  </button>
+</div>
+                  
                 </> :
                 <>
-                  <button
-                    onClick={guardarNomGrup}
-                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center text-center"
-                  >
-                    Empezar el juego
-                  </button>
+                <div className="flex items-center justify-center min-h-screen">
+  <button 
+  onClick={guardarNomGrup} 
+  className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">
+    Empezar el juego
+  </button>
+</div>
+                  
                 </>}
 
               <br /><br />
@@ -514,7 +518,7 @@ export default function Home() {
 
             {preguntes[pasActual].calRespondre ? (
               <>
-                <h3 className="mx-3 text-xl font-semibold mb-4">{preguntes[pasActual].pregunta}.ª pregunta</h3>
+                <h3 className="text-center mx-3 text-xl font-semibold mb-4">{preguntes[pasActual].pregunta}.ª pregunta</h3>
                 <h6 className="mb-4 mx-4">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <input
                   type="text"
