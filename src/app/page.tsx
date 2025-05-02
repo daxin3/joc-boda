@@ -439,7 +439,7 @@ export default function Home() {
               <div></div>
               {lang == 'ca' ?
                 <>
-                  <div className="center-container">
+                  <div className={styles.center_container}>
                     <button
                       onClick={guardarNomGrup}
                       className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
@@ -450,10 +450,10 @@ export default function Home() {
                 </> :
                 <>
 
-                  <div className="center-container">
+                  <div className={styles.center_container}>
                     <button
                       onClick={guardarNomGrup}
-                      className="bg-blue-500 px-6 py-3 rounded hover:bg-blue-600">
+                      className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
                       Empezar el juego
                     </button>
                   </div>

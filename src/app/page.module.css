@@ -416,3 +416,9 @@ a.secondary {
 .inline_block {
   padding: 10px;
 }
+
+.center-container {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  
+}
