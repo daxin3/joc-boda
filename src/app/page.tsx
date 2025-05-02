@@ -59,7 +59,7 @@ function FooterPersonalitzat({ lang }: FooterProps) {
           height={0}
           style={{ width: '100%', height: 'auto' }}
         />
-        <h4 className={styles.footer_container_text}>
+        <h4 className={styles.center_container}>
           {lang == 'ca' ? (<>Que us ho passeu pipa!</>) : (<>¡Que lo paséis en grande!
           </>)}
         </h4>
@@ -426,7 +426,7 @@ export default function Home() {
                   <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
                 </>}
 
-              <div className="center-container">
+              <div className={styles.center_container}>
                 <input
                   type="text"
                   value={valorNomGrup}
@@ -522,16 +522,18 @@ export default function Home() {
               <>
                 <h3 className="text-center mx-3 text-xl font-semibold mb-4">{preguntes[pasActual].pregunta}.ª pregunta</h3>
                 <h6 className="mb-4 mx-4">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
-                <input
+                <div className={styles.center_container}>
+                  <input
                   type="text"
                   value={respostaUsuari}
                   onChange={(e) => setRespostaUsuari(e.target.value)}
                   className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
                 />
+                </div>
                 {error && <p className="text-red-500 text-sm mb-2" style={{ color: '#e52323' }}>{error}</p>}
                 <br />
                 <div></div>
-                <div className="flex justify-center">
+                <div className={styles.center_container}>
                   <button
                     className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 "
                     onClick={comprovarResposta}>
@@ -544,7 +546,7 @@ export default function Home() {
               <>
                 <h6 className="mx-3 text-xl font-semibold mb-4 text-center">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <br />
-                <div className="flex justify-center">
+                <div className={styles.center_container}>
                   <button
                     onClick={seguentPas}
                     className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 "
