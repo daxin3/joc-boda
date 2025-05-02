@@ -325,9 +325,11 @@ a.secondary {
 .footer_container_text {
   position: absolute;
   top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 19px;
-  justify-self: anchor-center;
-  text-align: center !important;
+  text-align: center;
+  width: max-content;
 }
 
 .main_botton {
