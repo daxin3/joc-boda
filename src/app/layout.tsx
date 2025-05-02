@@ -34,6 +34,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico"/>
         <link rel="manifest" href="/site.webmanifest"/>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <meta property="og:site_name" content="Clàudia & Dani - Invitació" />
         <meta property="og:title" content="Clàudia & Dani - Invitació" />
         <meta property="og:description" content="Festa Major" />

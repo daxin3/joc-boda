@@ -327,7 +327,7 @@ a.secondary {
   top: 15%;
   padding: 19px;
   justify-self: anchor-center;
-  text-align: center;
+  text-align: center !important;
 }
 
 .main_botton {

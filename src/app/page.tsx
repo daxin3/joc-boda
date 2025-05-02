@@ -422,7 +422,7 @@ export default function Home() {
                     <li className="mx-1">Debéis colaborar entre vosotros, como en un Escape Room.</li>
                     <li className="mx-1">Recordad que NO ESTÁIS SOLOS. Si una pregunta se os atraganta, podéis pedir ayuda. 😉</li>
                   </ul>
-                  
+
                   <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
                 </>}
 
@@ -438,24 +438,25 @@ export default function Home() {
               <div></div>
               {lang == 'ca' ?
                 <>
-                <div className="flex items-center justify-center min-h-screen">
-  <button 
-  onClick={guardarNomGrup} 
-  className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
-    Començar el joc
-  </button>
-</div>
-                  
+                  <div className="flex items-center justify-center min-h-screen">
+                    <button
+                      onClick={guardarNomGrup}
+                      className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+                      Començar el joc
+                    </button>
+                  </div>
+
                 </> :
                 <>
-                <div className="flex items-center justify-center min-h-screen">
-  <button 
-  onClick={guardarNomGrup} 
-  className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600">
-    Empezar el juego
-  </button>
-</div>
                   
+                  <div className="flex justify-center items-center min-h-screen h-screen ">
+                    <button
+                      onClick={guardarNomGrup}
+                      className="bg-blue-500 px-6 py-3 rounded hover:bg-blue-600">
+                      Empezar el juego
+                    </button>
+                  </div>
+
                 </>}
 
               <br /><br />
@@ -530,9 +531,9 @@ export default function Home() {
                 <br />
                 <div></div>
                 <div className="flex justify-center">
-                  <button 
-                  className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 "
-                  onClick={comprovarResposta}>
+                  <button
+                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 "
+                    onClick={comprovarResposta}>
                     Comprovar
                   </button>
                 </div>
