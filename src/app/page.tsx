@@ -422,7 +422,7 @@ export default function Home() {
                     <li className="mx-1">Debéis colaborar entre vosotros, como en un Escape Room.</li>
                     <li className="mx-1">Recordad que NO ESTÁIS SOLOS. Si una pregunta se os atraganta, podéis pedir ayuda. 😉</li>
                   </ul>
-                  <br />
+                  
                   <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
                 </>}
 
@@ -526,7 +526,9 @@ export default function Home() {
                 <br />
                 <div></div>
                 <div className="flex justify-center">
-                  <button className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 ">
+                  <button 
+                  className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 "
+                  onClick={comprovarResposta}>
                     Comprovar
                   </button>
                 </div>
