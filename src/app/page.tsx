@@ -426,19 +426,20 @@ export default function Home() {
                   <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
                 </>}
 
-
-              <input
-                type="text"
-                value={valorNomGrup}
-                onChange={(e) => setNomGrup(e.target.value)}
-                className="border border-gray-300 rounded px-3 py-2 w-full mb-2 text-center"
-              />
+              <div className="center-container">
+                <input
+                  type="text"
+                  value={valorNomGrup}
+                  onChange={(e) => setNomGrup(e.target.value)}
+                  className="border border-gray-300 rounded px-3 py-2 w-full mb-2 text-center"
+                />
+              </div>
 
               <br />
               <div></div>
               {lang == 'ca' ?
                 <>
-                  <div className="flex items-center justify-center min-h-screen">
+                  <div className="center-container">
                     <button
                       onClick={guardarNomGrup}
                       className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
@@ -449,7 +450,7 @@ export default function Home() {
                 </> :
                 <>
 
-                  <div className="flex justify-center items-center h-screen">
+                  <div className="center-container">
                     <button
                       onClick={guardarNomGrup}
                       className="bg-blue-500 px-6 py-3 rounded hover:bg-blue-600">
