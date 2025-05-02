@@ -420,5 +420,6 @@ a.secondary {
 .center_container {
   display: flex;
   justify-content: center; /* centra horizontalmente */
-  
+  width: 100%;             /* ocupa todo el ancho */
+  text-align: center;      /* centra inline/inline-block horizontalmente */
 }

@@ -59,7 +59,7 @@ function FooterPersonalitzat({ lang }: FooterProps) {
           height={0}
           style={{ width: '100%', height: 'auto' }}
         />
-        <h4 className={styles.center_container}>
+        <h4 style={{ textAlign: "center" }} className={styles.footer_container_text}>
           {lang == 'ca' ? (<>Que us ho passeu pipa!</>) : (<>¡Que lo paséis en grande!
           </>)}
         </h4>
