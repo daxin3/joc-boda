@@ -448,8 +448,8 @@ export default function Home() {
 
                 </> :
                 <>
-                  
-                  <div className="flex justify-center items-center min-h-screen h-screen ">
+
+                  <div className="flex justify-center items-center h-screen">
                     <button
                       onClick={guardarNomGrup}
                       className="bg-blue-500 px-6 py-3 rounded hover:bg-blue-600">
