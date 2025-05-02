@@ -59,10 +59,16 @@ function FooterPersonalitzat({ lang }: FooterProps) {
           height={0}
           style={{ width: '100%', height: 'auto' }}
         /><div></div>
-        <h4 style={{ textAlign: 'center' }} className={styles.footer_container_text}>
-          {lang == 'ca' ? (<>Que us ho passeu pipa!</>) : (<>¡Que lo paséis en grande!
-          </>)}
-        </h4>
+
+        {lang == 'ca' ? (
+          <h4 style={{ textAlign: 'center' }} className={styles.footer_container_text}>
+            Que us ho passeu pipa!
+          </h4>
+        ) : (
+          <h4 style={{ textAlign: 'center' }} className={styles.footer_container_text}>
+            ¡Que lo paséis en grande!
+          </h4>)}
+
       </div>
       <div style={{ textAlign: "center", fontSize: "small", padding: "10px" }}> · Dissenyada per nosaltres amb molt  &#129505; · </div>
       <br />
@@ -524,11 +530,11 @@ export default function Home() {
                 <h6 className="mb-4 mx-4">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <div className={styles.center_container}>
                   <input
-                  type="text"
-                  value={respostaUsuari}
-                  onChange={(e) => setRespostaUsuari(e.target.value)}
-                  className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
-                />
+                    type="text"
+                    value={respostaUsuari}
+                    onChange={(e) => setRespostaUsuari(e.target.value)}
+                    className="border border-gray-300 rounded px-3 py-2 w-full mb-2"
+                  />
                 </div>
                 {error && <p className="text-red-500 text-sm mb-2" style={{ color: '#e52323' }}>{error}</p>}
                 <br />
