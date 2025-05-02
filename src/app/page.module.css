@@ -417,7 +417,7 @@ a.secondary {
   padding: 10px;
 }
 
-.center-container {
+.center_container {
   display: flex;
   justify-content: center; /* centra horizontalmente */
   
