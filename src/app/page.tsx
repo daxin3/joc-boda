@@ -263,7 +263,7 @@ export default function Home() {
         setError('Respuesta incorrecta. Inténtalo de nuevo.');
 
       }
-      
+
     }
   };
 
@@ -307,11 +307,11 @@ export default function Home() {
               <br />
               {lang == 'ca' ?
                 <>
-                  <h2 style={{textAlign: "center"}} className="mx-3 text-center" >Només una colla pot destacar per damunt de les altres... Esteu a punt per demostrar que sou vosaltres?</h2>
+                  <h2 style={{ textAlign: "center" }} className="mx-3 text-center" >Només una colla pot destacar per damunt de les altres... Esteu a punt per demostrar que sou vosaltres?</h2>
 
                 </> :
                 <>
-                  <h2 style={{textAlign: "center"}} className="mx-3 text-center">Solo un grupo puede destacar sobre los demás... ¿Estáis listos para demostrar que sois vosotros?</h2>
+                  <h2 style={{ textAlign: "center" }} className="mx-3 text-center">Solo un grupo puede destacar sobre los demás... ¿Estáis listos para demostrar que sois vosotros?</h2>
 
                 </>}
 
@@ -425,7 +425,7 @@ export default function Home() {
                   <br />
                   <h2 className="mx-3 text-center">Nombrad a vuestro aquelarre… digo, equipo:</h2>
                 </>}
-                
+
 
               <input
                 type="text"
@@ -487,7 +487,7 @@ export default function Home() {
               </div>
               <h1>🎉 Felicitats! 🎉</h1>
               <h3>Heu completat el repte!</h3>
-              
+
             </div>
           </div>
 
@@ -510,7 +510,7 @@ export default function Home() {
           <div className={styles.page}>
             <div className="text-start" ></div>
             <br />
-            <h1 className="textmx-3">{lang == 'ca' ? (<>Endavant <b>{valorNomGrup}!</b></>) : (<>¡Adelante <b>{valorNomGrup}!</b></>)}</h1><br />
+            <h1 className="text-center mx-3">{lang == 'ca' ? (<>Endavant <b>{valorNomGrup}!</b></>) : (<>¡Adelante <b>{valorNomGrup}!</b></>)}</h1><br />
 
             {preguntes[pasActual].calRespondre ? (
               <>
@@ -525,23 +525,24 @@ export default function Home() {
                 {error && <p className="text-red-500 text-sm mb-2" style={{ color: '#e52323' }}>{error}</p>}
                 <br />
                 <div></div>
-                <button
-                  onClick={comprovarResposta}
-                  className="mx-auto bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-                >
-                  Comprovar
-                </button>
+                <div className="flex justify-center">
+                  <button className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 ">
+                    Comprovar
+                  </button>
+                </div>
+
               </>
             ) : (
               <>
                 <h6 className="mx-3 text-xl font-semibold mb-4 text-center">{lang == 'ca' ? (preguntes[pasActual].text) : (preguntes[pasActual].textEs)}</h6>
                 <br />
-                <button
-                  onClick={seguentPas}
-                  className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 center"
-                >
-                  {preguntes[pasActual].boto}
-                </button>
+                <div className="flex justify-center">
+                  <button
+                    onClick={seguentPas}
+                    className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 "
+                  >
+                    {preguntes[pasActual].boto}
+                  </button></div>
 
               </>
 
