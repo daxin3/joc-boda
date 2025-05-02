@@ -58,8 +58,8 @@ function FooterPersonalitzat({ lang }: FooterProps) {
           width={0}
           height={0}
           style={{ width: '100%', height: 'auto' }}
-        />
-        <h4 style={{ textAlign: "center" }} className={styles.footer_container_text}>
+        /><div></div>
+        <h4 style={{ textAlign: 'center' }} className={styles.footer_container_text}>
           {lang == 'ca' ? (<>Que us ho passeu pipa!</>) : (<>¡Que lo paséis en grande!
           </>)}
         </h4>
@@ -491,8 +491,8 @@ export default function Home() {
               <div className="p-6 text-center text-green-600 font-bold text-xl">
 
               </div>
-              <h1>🎉 Felicitats! 🎉</h1>
-              <h3>Heu completat el repte!</h3>
+              <h1 style={{ textAlign: 'center' }}>🎉 Felicitats! 🎉</h1>
+              <h3 style={{ textAlign: 'center' }}>Heu completat el repte!</h3>
 
             </div>
           </div>
